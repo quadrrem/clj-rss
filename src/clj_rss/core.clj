@@ -1,7 +1,6 @@
-(ns clj-rss.core (:gen-class)
+(ns clj-rss.core
   (require [clojure.java.io :as io]
-           [clojure.xml :as xml]
-           [clojure.pprint :as pp]))
+           [clojure.xml :as xml]))
 
 (defn parse [url]
   (with-open
@@ -31,6 +30,3 @@
 
 (defn read-rss [source]
   (read-tags (parse source)))
-
-(defn- main [& args]
-  (pp/pprint (read-rss (first args))))
